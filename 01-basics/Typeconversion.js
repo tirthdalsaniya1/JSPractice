@@ -1,0 +1,27 @@
+/* implicit conversion - javascript automatically do it */
+
+console.log(2 + '3')
+console.log(true + '3')
+console.log('4' - '3')
+console.log('4' + 3)
+console.log('Hello' + 3)
+console.log(3 + 'Hello')
+console.log('5' - true)
+console.log('5' - false)
+console.log('bruce' - 'wayne')
+console.log('5' - null)
+console.log('5' + undefined)
+console.log(5 + undefined)
+
+/* explicit conversion - manually we do it using some built in methods */
+console.log(Number('5'))
+console.log(Number(false))
+console.log(Number(''))
+console.log(parseInt('15'))
+console.log(parseFloat('3.14'))
+console.log(String(500))
+console.log(String(true))
+console.log(String(null))
+console.log(String(undefined))
+console.log((500).toString())
+console.log(Boolean(50))
