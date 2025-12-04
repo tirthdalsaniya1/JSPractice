@@ -73,3 +73,14 @@ Type must match exactly
 No special cases
 Simple & predictable
 */
+/*
+| Expression        | `==` | `===` | Why?                      |
+| ----------------- | ---- | ----- | ------------------------- |
+| 5 vs "5"          | true | false | `"5"` converted to number |
+| true vs 1         | true | false | `true → 1`                |
+| false vs 0        | true | false | `false → 0`               |
+| null vs undefined | true | false | special rule in JS        |
+| [] vs ""          | true | false | `[] → ""`                 |
+| [] vs 0           | true | false | `[] → "" → 0`             |
+| "0" vs false      | true | false | `"0" → 0, false → 0`      |
+*/
