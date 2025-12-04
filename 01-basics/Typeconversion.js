@@ -1,5 +1,14 @@
 /* implicit conversion - javascript automatically do it */
 
+/*
+Rule 1: + with a string → converts everything to STRING
+If either operand is a string, JavaScript treats + as string concatenation, not arithmetic.
+*/
+
+/*
+Rule 2: -, *, /, % always convert to NUMBER
+If you use operators like -, JavaScript forces both sides to be numbers. IT will convert true → 1, false → 0, null → 0, 
+*/
 console.log(2 + '3')
 console.log(true + '3')
 console.log('4' - '3')
@@ -8,10 +17,17 @@ console.log('Hello' + 3)
 console.log(3 + 'Hello')
 console.log('5' - true)
 console.log('5' - false)
+
+/*
+“bruce” → cannot be converted to number → NaN
+“wayne” → cannot be converted to number → NaN
+NaN - NaN = NaN
+Output: NaN
+*/
 console.log('bruce' - 'wayne')
 console.log('5' - null)
-console.log('5' + undefined)
-console.log(5 + undefined)
+console.log('5' + undefined) // here there is a string so it will concat
+console.log(5 + undefined)   // no string so it will convert undefined → NaN so 5 + NaN = NaN
 
 /* explicit conversion - manually we do it using some built in methods */
 console.log(Number('5'))
@@ -83,4 +99,12 @@ Simple & predictable
 | [] vs ""          | true | false | `[] → ""`                 |
 | [] vs 0           | true | false | `[] → "" → 0`             |
 | "0" vs false      | true | false | `"0" → 0, false → 0`      |
+*/
+
+/*
+This is implicit type conversion where JavaScript automatically changes data types:
++ favors strings → concatenation
+Other operators (-, *, /) force numbers
+Invalid numeric conversion → NaN
+true → 1, false → 0, null → 0, undefined → NaN
 */
