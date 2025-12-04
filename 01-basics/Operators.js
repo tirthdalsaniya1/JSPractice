@@ -39,6 +39,15 @@ console.log(q--)
 console.log('now p is ', p)
 console.log('now q is ', q)
 
+/*
+| Operator | Updates When?      | Returns   |
+| -------- | ------------------ | --------- |
+| `++x`    | Before using value | New value |
+| `x++`    | After using value  | Old value |
+| `--x`    | Before using value | New value |
+| `x--`    | After using value  | Old value |
+*/
+
 /* comparision operator */
 console.log(x == y)
 console.log(x != y)
