@@ -27,6 +27,38 @@ console.log((500).toString())
 console.log(Boolean(50))
 
 /*
+=== (Strict Equality)
+Checks 2 things only:
+Same value?
+Same type?
+No conversion, no magic.
+*/
+
+5 === 5       // true (same value, same type)
+5 === "5"     // false (number vs string)
+true === 1    // false
+null === undefined // false
+
+
+/*
+== (Loose Equality)
+Checks value BUT also tries to convert types before comparing.
+This is called type coercion.
+*/
+
+5 == "5"      // true  (string → number)
+true == 1     // true  (true → 1)
+false == 0    // true  (false → 0)
+"" == 0       // true  ("" → 0)
+null == undefined // true (special rule)
+
+
+/*
+❌ Can cause confusion
+❌ Sometimes behaves unexpectedly
+*/
+
+/*
 ✔ What == checks
 
 Value (after converting types)
