@@ -4,6 +4,14 @@
 //primitive
 
 /*String*/
+
+/*
+Why I am able to see name is deprecated ? 
+>> In a browser JS/TS environment, name is a global property on window (window.name). 
+In some DOM typings, Window.name is marked deprecated. 
+When you declare const name = 'String' at top-level, VS Code’s type system resolves/shadows that global and surfaces the deprecation note.
+Why you see it: The editor warns because the identifier name refers to or shadows a deprecated global symbol, even though you’re just using it as a local variable.
+*/
 const name = 'String'
 console.log(name)
 
@@ -44,6 +52,22 @@ const sym1 = Symbol("id");
 const sym2 = Symbol("id");
 
 console.log(sym1 === sym2); // false — always unique
+
+const obj = {};
+
+const id1 = Symbol("id");
+const id2 = Symbol("id");
+
+obj[id1] = 101;
+obj[id2] = 202;
+
+console.log(obj);        // { [Symbol(id)]: 101, [Symbol(id)]: 202 }
+/*
+To create unique object keys (no naming collisions)
+
+Imagine you are adding properties to an object but you don’t want to accidentally overwrite someone else’s property.
+
+*/
 
 /* Non premitive > its a collection of value. These can store multiple values and are mutable.
 
