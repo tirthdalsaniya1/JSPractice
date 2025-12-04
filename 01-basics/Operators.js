@@ -14,10 +14,22 @@ console.log(x % y)
 
 /* increment operator and decrement operator */
 
+/*
+Pre-Increment / Pre-Decrement ++x, --y
+✔ First update the value
+✔ Then return the updated value
+*/
+
 console.log(++x)
 console.log(--y)
 console.log('now x is ', x)
 console.log('now y is ', y)
+
+/*
+Post-Increment / Post-Decrement x++, y--
+✔ First return the current value
+✔ Then update the value
+*/
 
 let p = 10
 let q = 50
