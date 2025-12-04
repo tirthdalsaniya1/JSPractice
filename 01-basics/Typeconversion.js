@@ -1,4 +1,7 @@
-/* implicit conversion - javascript automatically do it */
+/* implicit conversion - javascript automatically do it 
+Implicit Type Conversion (also called Type Coercion) in JavaScript.
+JavaScript is a loosely typed / dynamically typed language, so it automatically converts values from one data type to another when needed.
+*/
 
 /*
 Rule 1: + with a string → converts everything to STRING
@@ -30,17 +33,70 @@ console.log('5' + undefined) // here there is a string so it will concat
 console.log(5 + undefined)   // no string so it will convert undefined → NaN so 5 + NaN = NaN
 
 /* explicit conversion - manually we do it using some built in methods */
-console.log(Number('5'))
-console.log(Number(false))
-console.log(Number(''))
-console.log(parseInt('15'))
-console.log(parseFloat('3.14'))
+
+/* explicit type conversion (also called type casting) in JavaScript.
+Here, we intentionally convert values to a specific data type using built-in functions like: Number(), String(), Boolean(), parseInt(), parseFloat(), toString()
+*/
+console.log(Number('5'))   // convers to number from String, '5' to 5
+console.log(Number(false)) // convers to number, boolean to 0
+console.log(Number(true)) // convers to number, boolean to 1
+console.log(Number(''))    // convers Empty string to number "" → 0
+console.log(Number('abc')) // convers string to NaN
+console.log(Number(NaN))   // convers NaN to NaN
+console.log(Number(undefined))  // convers undefined to NaN
+/*
+parseInt() rules:
+Reads until a non-digit is found
+Ignores decimals
+Ignores trailing characters
+*/
+console.log(parseInt('15'))  // 15
+console.log(parseInt('15.010')) // 15
+console.log(parseInt("15px"))  // 15
+console.log(parseInt("10.99")) // 10
+console.log(parseInt("abc"))   // NaN
+
+/* parseFloat() → Extracts decimal number */
+
+console.log(parseFloat('3.14')) // 3.14
+parseFloat("3.14px") // 3.14
+parseFloat("10")     // 10
+
+/*
+Difference between Number() vs parseInt() / parseFloat()
+
+| Function       | Converts whole string? | Returns       |
+| -------------- | ---------------------- | ------------- |
+| `Number()`     | must be a valid number | number / NaN  |
+| `parseInt()`   | extracts integer part  | integer / NaN |
+| `parseFloat()` | extracts decimal part  | float / NaN   |
+*/
+
+/* String() → Converts to string but null.toString() and undefined.toString() will cause error*/
 console.log(String(500))
 console.log(String(true))
 console.log(String(null))
 console.log(String(undefined))
+
 console.log((500).toString())
-console.log(Boolean(50))
+
+// this will throw error
+//console.log(null.toString())    // error
+//console.log(undefined.toString()) // error
+
+// Boolean() → Converts to boolean and any non-zero number → true
+console.log(Boolean(50)) // true
+console.log(Boolean(100)) // true
+console.log(Boolean(-5)) // true
+console.log(Boolean('hello')) // true
+console.log(Boolean(undefined)) // false
+console.log(Boolean('')) // false
+console.log(Boolean(' ')) // true
+console.log(Boolean(0)) // false
+console.log(Boolean(NaN)) // false
+console.log(Boolean(null)) // false
+
+
 
 /*
 === (Strict Equality)
