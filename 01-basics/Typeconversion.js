@@ -25,3 +25,19 @@ console.log(String(null))
 console.log(String(undefined))
 console.log((500).toString())
 console.log(Boolean(50))
+
+/*
+✔ What == checks
+
+Value (after converting types)
+Allows weird coercions
+Has many special cases
+Follows complex internal rules (abstract equality)
+
+✔ What === checks
+
+Value without converting types
+Type must match exactly
+No special cases
+Simple & predictable
+*/
