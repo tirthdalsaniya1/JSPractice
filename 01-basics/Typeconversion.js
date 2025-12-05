@@ -12,14 +12,14 @@ If either operand is a string, JavaScript treats + as string concatenation, not 
 Rule 2: -, *, /, % always convert to NUMBER
 If you use operators like -, JavaScript forces both sides to be numbers. IT will convert true → 1, false → 0, null → 0, 
 */
-console.log(2 + '3')
-console.log(true + '3')
-console.log('4' - '3')
-console.log('4' + 3)
-console.log('Hello' + 3)
-console.log(3 + 'Hello')
-console.log('5' - true)
-console.log('5' - false)
+console.log(2 + "3");
+console.log(true + "3");
+console.log("4" - "3");
+console.log("4" + 3);
+console.log("Hello" + 3);
+console.log(3 + "Hello");
+console.log("5" - true);
+console.log("5" - false);
 
 /*
 “bruce” → cannot be converted to number → NaN
@@ -27,40 +27,40 @@ console.log('5' - false)
 NaN - NaN = NaN
 Output: NaN
 */
-console.log('bruce' - 'wayne')
-console.log('5' - null)
-console.log('5' + undefined) // here there is a string so it will concat
-console.log(5 + undefined)   // no string so it will convert undefined → NaN so 5 + NaN = NaN
+console.log("bruce" - "wayne");
+console.log("5" - null);
+console.log("5" + undefined); // here there is a string so it will concat
+console.log(5 + undefined); // no string so it will convert undefined → NaN so 5 + NaN = NaN
 
 /* explicit conversion - manually we do it using some built in methods */
 
 /* explicit type conversion (also called type casting) in JavaScript.
 Here, we intentionally convert values to a specific data type using built-in functions like: Number(), String(), Boolean(), parseInt(), parseFloat(), toString()
 */
-console.log(Number('5'))   // convers to number from String, '5' to 5
-console.log(Number(false)) // convers to number, boolean to 0
-console.log(Number(true)) // convers to number, boolean to 1
-console.log(Number(''))    // convers Empty string to number "" → 0
-console.log(Number('abc')) // convers string to NaN
-console.log(Number(NaN))   // convers NaN to NaN
-console.log(Number(undefined))  // convers undefined to NaN
+console.log(Number("5")); // convers to number from String, '5' to 5
+console.log(Number(false)); // convers to number, boolean to 0
+console.log(Number(true)); // convers to number, boolean to 1
+console.log(Number("")); // convers Empty string to number "" → 0
+console.log(Number("abc")); // convers string to NaN
+console.log(Number(NaN)); // convers NaN to NaN
+console.log(Number(undefined)); // convers undefined to NaN
 /*
 parseInt() rules:
 Reads until a non-digit is found
 Ignores decimals
 Ignores trailing characters
 */
-console.log(parseInt('15'))  // 15
-console.log(parseInt('15.010')) // 15
-console.log(parseInt("15px"))  // 15
-console.log(parseInt("10.99")) // 10
-console.log(parseInt("abc"))   // NaN
+console.log(parseInt("15")); // 15
+console.log(parseInt("15.010")); // 15
+console.log(parseInt("15px")); // 15
+console.log(parseInt("10.99")); // 10
+console.log(parseInt("abc")); // NaN
 
 /* parseFloat() → Extracts decimal number */
 
-console.log(parseFloat('3.14')) // 3.14
-parseFloat("3.14px") // 3.14
-parseFloat("10")     // 10
+console.log(parseFloat("3.14")); // 3.14
+parseFloat("3.14px"); // 3.14
+parseFloat("10"); // 10
 
 /*
 Difference between Number() vs parseInt() / parseFloat()
@@ -73,30 +73,28 @@ Difference between Number() vs parseInt() / parseFloat()
 */
 
 /* String() → Converts to string but null.toString() and undefined.toString() will cause error*/
-console.log(String(500))
-console.log(String(true))
-console.log(String(null))
-console.log(String(undefined))
+console.log(String(500));
+console.log(String(true));
+console.log(String(null));
+console.log(String(undefined));
 
-console.log((500).toString())
+console.log((500).toString());
 
 // this will throw error
 //console.log(null.toString())    // error
 //console.log(undefined.toString()) // error
 
 // Boolean() → Converts to boolean and any non-zero number → true
-console.log(Boolean(50)) // true
-console.log(Boolean(100)) // true
-console.log(Boolean(-5)) // true
-console.log(Boolean('hello')) // true
-console.log(Boolean(undefined)) // false
-console.log(Boolean('')) // false
-console.log(Boolean(' ')) // true
-console.log(Boolean(0)) // false
-console.log(Boolean(NaN)) // false
-console.log(Boolean(null)) // false
-
-
+console.log(Boolean(50)); // true
+console.log(Boolean(100)); // true
+console.log(Boolean(-5)); // true
+console.log(Boolean("hello")); // true
+console.log(Boolean(undefined)); // false
+console.log(Boolean("")); // false
+console.log(Boolean(" ")); // true
+console.log(Boolean(0)); // false
+console.log(Boolean(NaN)); // false
+console.log(Boolean(null)); // false
 
 /*
 === (Strict Equality)
@@ -106,11 +104,10 @@ Same type?
 No conversion, no magic.
 */
 
-5 === 5       // true (same value, same type)
-5 === "5"     // false (number vs string)
-true === 1    // false
-null === undefined // false
-
+5 === 5; // true (same value, same type)
+5 === "5"; // false (number vs string)
+true === 1; // false
+null === undefined; // false
 
 /*
 == (Loose Equality)
@@ -118,12 +115,11 @@ Checks value BUT also tries to convert types before comparing.
 This is called type coercion.
 */
 
-5 == "5"      // true  (string → number)
-true == 1     // true  (true → 1)
-false == 0    // true  (false → 0)
-"" == 0       // true  ("" → 0)
-null == undefined // true (special rule)
-
+5 == "5"; // true  (string → number)
+true == 1; // true  (true → 1)
+false == 0; // true  (false → 0)
+"" == 0; // true  ("" → 0)
+null == undefined; // true (special rule)
 
 /*
 ❌ Can cause confusion
